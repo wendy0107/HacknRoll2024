@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React, { useState, useContext } from 'react';
 import Login from "./pages/login"
 import Home from "./pages/home"
+import Activities from "./pages/activities";
 import { UserContext } from "./context/userContext";
 import './App.css';
 
@@ -16,6 +17,7 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Login />}></Route>
       <Route path="/home" element={<Home name={userName} />}></Route>
+      <Route path="/activities" element={<Activities />}></Route>
     </Routes>
     </Router>
     </UserContext.Provider>

@@ -1,7 +1,7 @@
 .card-container{
-    width: 400px;
+    width: 80%;
     height: 200px;
-    overflow: : hidden;
+    overflow: hidden;
     box-shadow: 0px 0px 15px -5px;
     transition: 0.3s;
     animation: ease-in;
@@ -17,27 +17,27 @@
 .image-container img{
     overflow: hidden;
     height: 200px;
+    display: block;
+    width: 40%;
     float: left;
+    line-height: 200px;
 }
 
 .card-content{
-    max-width: 200px;
-    float:inline-start;
+    text-size-adjust: 0.6em;
+    max-width: 50%;
+    float: inline-start;
     margin-top: 10px;
-    margin-left: 25px;
+    padding-left: 10px;
+    word-wrap: break-word;
 }
 
 #addressPic {
-    max-width: 20px;
+    max-width: 15px;
     background-color: white;
 }
 
-.card-title{
-    margin-bottom: 0.5rem;
-
-}
-
-h2, p{
+h3, p{
     margin: 0;
     padding: 0;
     color: black;

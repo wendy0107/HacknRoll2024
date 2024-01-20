@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
-const SUPABASE_API_KEY = import.meta.env.VITE_SUPABASE_API_KEY;
+const SUPABASE_URL = "https://qcrydpbedggbkelwfrjq.supabase.co";
+const SUPABASE_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFjcnlkcGJlZGdnYmtlbHdmcmpxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcwNTczMTY1NCwiZXhwIjoyMDIxMzA3NjU0fQ.sZne3DM7KpHaOzGdgcwqLj6uvc_EYhYqgHQV_ksAQMo";
 const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_API_KEY
 const supabase = createClient(SUPABASE_URL, SUPABASE_API_KEY);
 const GOOGLE_MAPS_API_BASE_URL = "https://maps.googleapis.com/maps/api/place/"
