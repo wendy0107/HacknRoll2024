@@ -1,0 +1,37 @@
+.header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  font-size: 24px;
+}
+
+.login-container {
+  width: 300px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.login-container label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  /* Increase border-radius for a rounded button */
+  border-radius: 10px;
+  cursor: pointer;
+}

@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// App.jsx
+import ReactDOM from "react-dom/client";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useState, useContext } from 'react';
+import Login from "./pages/login"
+import Home from "./pages/home"
+import { UserContext } from "./context/userContext";
+import './App.css';
+import { createClient } from "@supabase/supabase-js";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  // const dotenv = require('dotenv');
+  // const { createClient } = require('@supabase/supabase-js');
+  // dotenv.config();
 
+  const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
+  const SUPABASE_API_KEY = import.meta.env.VITE_SUPABASE_API_KEY;
+  // const supabase = createClient(SUPABASE_URL, SUPABASE_API_KEY);
+
+  const [userName, setUserName] = useState("")
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <UserContext.Provider value={{userName, setUserName}}>
+    <Router>
+    <Routes>
+      <Route path="/" element={<Login />}></Route>
+      <Route path="/home" element={<Home name={userName} />}></Route>
+    </Routes>
+    </Router>
+    </UserContext.Provider>
+    )
+};
 
-export default App
+export default App;
