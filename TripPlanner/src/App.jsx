@@ -6,16 +6,8 @@ import Login from "./pages/login"
 import Home from "./pages/home"
 import { UserContext } from "./context/userContext";
 import './App.css';
-import { createClient } from "@supabase/supabase-js";
 
 const App = () => {
-  // const dotenv = require('dotenv');
-  // const { createClient } = require('@supabase/supabase-js');
-  // dotenv.config();
-
-  const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
-  const SUPABASE_API_KEY = import.meta.env.VITE_SUPABASE_API_KEY;
-  // const supabase = createClient(SUPABASE_URL, SUPABASE_API_KEY);
 
   const [userName, setUserName] = useState("")
   return (
