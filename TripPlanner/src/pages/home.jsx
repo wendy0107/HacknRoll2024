@@ -9,6 +9,7 @@ const Home = ({name}) => {
 // const name = useContext(UserContext)  
   const [destination, setDestination] = useState('');
   const [placeData, setPlaceData] = useState([]);  
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchPlaceDataFromSupabase();
@@ -30,6 +31,11 @@ const Home = ({name}) => {
     );
     const response = await res.json();
     console.log(response)
+    const newData = await fetchPlaceDataFromSupabase();
+    setPlaceData(newData);
+
+      // Clear the input field
+    setDestination('');
 } catch (error) {
     console.error("error with backend", error);
 }
