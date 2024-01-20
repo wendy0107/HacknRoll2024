@@ -25,7 +25,7 @@ const Home = ({name}) => {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({placeData}),
+        body: JSON.stringify({destination}),
     }
     );
     const response = await res.json();
@@ -44,8 +44,8 @@ const Home = ({name}) => {
             <h1>Welcome {name}</h1>
         </div>
         <div className="placePageContainer">
-            <input type="text" placeholder="Add a destination" className='searchInput' value-={destination} onChange={(e) => handleAddPlace(e)}/>
-            <button className="addButton" onClick={(e) => addPlace(e)}>
+            <input type="text" id="destinationInput" placeholder="Add a destination" className='searchInput' value-={destination} onChange={(e) => setDestination(e.target.value)}/>
+            <button className="addButton" onClick={(e) => handleAddPlace(e)}>
                 Add
                 </button>
                 <div className="pageHeader">Destinations</div>
