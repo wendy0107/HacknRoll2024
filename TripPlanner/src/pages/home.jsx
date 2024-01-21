@@ -1,12 +1,12 @@
 // Home.jsx
 
 import React, {useState, useContext, useEffect} from 'react';
-import {UserContext} from "../context/userContext"
+import { useParams } from "react-router";
 import PlaceCard from '../components/PlaceCard';
-import { fetchPlaceDataFromSupabase, addPlace } from '../supabase';
+import { fetchPlaceDataFromSupabase } from '../supabase';
 
 const Home = ({name}) => {
-// const name = useContext(UserContext)  
+  const trip_id = useParams()
   const [destination, setDestination] = useState('');
   const [placeData, setPlaceData] = useState([]);  
 
@@ -26,7 +26,7 @@ const Home = ({name}) => {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({destination}),
+        body: JSON.stringify({destination, trip_id}),
     }
     );
     const response = await res.json();

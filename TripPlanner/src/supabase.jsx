@@ -18,44 +18,30 @@ export async function fetchPlaceDataFromSupabase() {
 
   return data;
 }
+export async function addTrip(country, start_date, end_date) {
+  console.log(typeof start_date)
+  let { data, error } = await supabase
+  .rpc('add_trip', {
+    p_country : country, 
+    p_end_date : end_date,
+    p_start_date : start_date
+  })
+if (error) console.error(error)
+else console.log(data)
+}
 
-// async function get_place_id(place_name) {
-//   try {
-//     const response = await fetch(GOOGLE_MAPS_API_BASE_URL + 
-//       "findplacefromtext/json?inputtype=textquery&input=" + 
-//       place_name + "&key=" + GOOGLE_API_KEY,
-//       {
-//         method: "GET",
-//         headers: {"Content-Type": "application/json",},
-//         // body: JSON.stringify({place_name})
-//       });
+export async function fetchTripDataFromSupabase() {
+  const { data, error } = await supabase
+  .from('trips')
+  .select('*');
 
-//     if (!response.ok) {
-//       throw new Error("Failed to fetch data from get_place_id")
-//     }
-
-//     const data = await response.json();
-//     return data["candidates"][0]["place_id"]
-//   } catch (error) {
-//     console.error('Error fetching place ID:', error.message);
-//     return null;
-//   }
-// }
-
-export async function addPlace(place_name) {
-
-  // console.log(get_place_id(place_name))
-  // const { data, error } = await supabase.rpc('create_google_activity', {
-  //   p_address, 
-  //   p_name, 
-  //   p_photo_reference, 
-  //   p_place_id, 
-  //   p_price_level, 
-  //   p_trip_id, 
-  //   p_website
-  // })
-  // if (error) console.error(error)
-  // else console.log(data)
+  if (error) {
+    console.error('Error fetching trip data:', error.message);
+    return [];
+  }
+  console.log("function called")
+  console.log(data)
+  return data;
 }
 
 // get place id from text
