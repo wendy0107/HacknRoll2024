@@ -19,7 +19,7 @@ function CountryCard({title, imageUrl, date}) {
                 </div>
                 <div className="buttonToActivities">
                     <br />
-                    <button id="activityButton" onClick={() => navigate("/activities")}>Dive in!</button>
+                    <button id="button-3" onClick={() => navigate("/activities")}>Dive in!</button>
                 </div>
             </div>
         </div>
