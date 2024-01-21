@@ -5,6 +5,7 @@ import {UserContext} from "../context/userContext"
 import Cards from '../Cards.jsx';
 import { fetchPlaceDataFromSupabase, addPlace } from '../supabase';
 import './activities.css'
+import Navbar from './navbar.jsx';
 
 const Activities = ({name}) => {
 // const name = useContext(UserContext)  
@@ -42,11 +43,11 @@ const Activities = ({name}) => {
             TripPlanner
         </header>
         <div className="welcome-container">
-            <h1>Welcome {name}</h1>
+            <h1>Activities</h1>
         </div>
         <div className="HomePlacePageContainer">
             <input type="text" placeholder="Add a destination" className='ActivitySearchInput' value-={destination} onChange={(e) => handleAddPlace(e)}/>
-            <button className="addButton" onClick={(e) => addPlace(e)}>
+            <button id="button-3" onClick={(e) => addPlace(e)}>
                 Add
                 </button>
         </div>

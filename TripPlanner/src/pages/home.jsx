@@ -42,8 +42,10 @@
 // }
 
 import React, {useState, useContext} from 'react';
-import {UserContext} from "../context/userContext"
-import CountryCard from "../CountryCard.jsx"
+import {UserContext} from "../context/userContext";
+import CountryCard from "../CountryCard.jsx";
+import Navbar from "./navbar.jsx";
+import './home.css';
 
 const Home = ({name}) => {
 // const name = useContext(UserContext)    
@@ -54,7 +56,7 @@ const Home = ({name}) => {
       </header>
       <div className="welcome-container">
         <h1>Welcome, {name}!</h1>
-        <p>Here are your upcoming trips...</p>
+        <p>Here's a quick look at your upcoming trips:</p>
         <br />
       </div>
       <div className='trips'>
