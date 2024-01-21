@@ -1,3 +1,11 @@
 .app {
   text-align:center
 }
+
+.app .header {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: left;
+  padding: 30px;
+}
+
