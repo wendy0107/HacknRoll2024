@@ -2,24 +2,26 @@ import React from "react";
 import './Cards.css';
 import addressPic from './assets/address.png';
 
-function Card({title, imageUrl, price, location, siteUrl}) {
+function Card({photo_ref, name, address, website, price_level}) {
     return (
         <div className="card-container">
             <div className="image-container">
-                <img src={imageUrl} alt="No image found" />
+                <img src={photo_ref} alt={name} />
             </div>
             <div className="card-content">
                 <div className="card-title">
-                    <h2>{title}</h2>
+                    <h3>{name}</h3>
                 </div>
                 <div className="card-price">
-                    <p>$ {price}</p>
+                    <p>$ {price_level}</p>
                 </div>
                 <div className="card-location">
-                    <p><img src={addressPic} alt="Address:" id="addressPic" /> {location}</p>
+                    <p><img src={addressPic} alt="Address:" id="addressPic" /> {address}</p>
                 </div>
                 <div className="card-siteUrl">
-                    <p>URL: {siteUrl}</p>
+                    <a className="cardWebsite" href={website} target="_blank" rel="noopener noreferrer">
+            {website}
+          </a>
                 </div>
             </div>
         </div>

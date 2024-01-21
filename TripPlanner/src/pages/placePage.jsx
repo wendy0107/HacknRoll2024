@@ -1,6 +1,6 @@
 // PlacePage.jsx
 import React, { useEffect, useState } from 'react';
-import PlaceCard from '../components/PlaceCard';
+import Card from '../Cards.jsx';
 import { fetchPlaceDataFromSupabase } from './supabase';
 import './placePage.css'; // Import the CSS file
 
@@ -22,7 +22,7 @@ const PlacePage = () => {
     <input type="text" placeholder="Add a destination" className='searchInput' value-={destination} onChange={(e) => setDestination(e.target.value)}/>
       <div className="pageHeader">Destinations</div>
       {placeData.map((place) => (
-        <PlaceCard key={place.place_id} {...place} />
+        <Card key={place.place_id} {...place} />
       ))}
     </div>
   );
