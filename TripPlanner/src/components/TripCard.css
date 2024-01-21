@@ -1,0 +1,35 @@
+/* TripCard.css */
+.tripCard {
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle shadow effect */
+}
+
+.tripImageContainer {
+    width: 50%;
+    overflow: hidden;
+}
+
+.tripImageContainer img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.tripDetails {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.country {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.dates {
+    margin-top: 10px;
+}
