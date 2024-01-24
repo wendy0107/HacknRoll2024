@@ -15,7 +15,7 @@ const Login = () => {
     setUserName(name);
     // Add your login logic here
     // For simplicity, this example just logs the entered email and name to the console
-    navigate("/home")
+    navigate("/trips")
     console.log('Login clicked! Email:', email, 'Name:', name);
   };
 

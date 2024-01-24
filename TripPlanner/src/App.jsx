@@ -7,6 +7,7 @@ import Home from "./pages/home"
 import Activities from "./pages/activities";
 import { UserContext } from "./context/userContext";
 import './App.css';
+import TripPage from "./pages/tripPage";
 
 const App = () => {
 
@@ -16,8 +17,9 @@ const App = () => {
     <Router>
     <Routes>
       <Route path="/" element={<Login />}></Route>
-      <Route path="/home" element={<Home name={userName} />}></Route>
+      <Route path="/planner/:trip_id" element={<Home name={userName} />}></Route>
       <Route path="/activities" element={<Activities />}></Route>
+      <Route path="/trips" element={<TripPage />}></Route>
     </Routes>
     </Router>
     </UserContext.Provider>

@@ -15,6 +15,12 @@ const SUPABASE_API_KEY = process.env.SUPABASE_API_KEY;
 const supabase = createClient(SUPABASE_URL, SUPABASE_API_KEY);
 const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY
 const GOOGLE_MAPS_API_BASE_URL = "https://maps.googleapis.com/maps/api/place/"
+const price_mapping = {
+    0 : "Free",
+    1 : "$",
+    2 : "$$",
+    3 : "$$$",
+    4 : "$$$$"}
 
 app.get('/', (req, res) => {
     res.send('Hello, this is your backend!');
@@ -24,6 +30,7 @@ app.post('/place_details', async (req, res) => {
     try {
         console.log(req.body)
         const place_name = req.body.destination
+        const trip_id = req.body.trip_id ? req.body.trip_id : "2fd752db-4e0a-4580-946f-068ffdb7197f" 
         console.log(place_name)
         const response = await fetch(GOOGLE_MAPS_API_BASE_URL + 
         "findplacefromtext/json?inputtype=textquery&input=" + 
@@ -42,7 +49,7 @@ app.post('/place_details', async (req, res) => {
         const place_det_data = place_det_response["result"]
         const photo = GOOGLE_MAPS_API_BASE_URL + "photo?maxwidth=500&photo_reference=" + place_det_data["photos"][0]["photo_reference"] + "&key=" + GOOGLE_API_KEY
         const price_level = place_det_data["price_level"] ? place_det_data["price_level"] : "No price"
-        const website = place_det_data["website"] ? place_det_data["website"] : "No website"
+        const website = place_det_data["website"] ? price_mapping[place_det_data["website"]] : "No website"
         console.log(photo)
         console.log(place_det_data["formatted_address"])
         console.log(place_det_data["name"])
@@ -55,7 +62,7 @@ app.post('/place_details', async (req, res) => {
             p_photo_reference : photo, 
             p_place_id : place_id, 
             p_price_level : price_level, 
-            p_trip_id : "2fd752db-4e0a-4580-946f-068ffdb7197f", 
+            p_trip_id : trip_id, 
             p_website : website
         })
         console.log(data)
