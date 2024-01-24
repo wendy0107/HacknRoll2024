@@ -3,7 +3,7 @@
 import React, {useState, useContext, useEffect} from 'react';
 import {UserContext} from "../context/userContext"
 import Cards from '../Cards.jsx';
-import { fetchPlaceDataFromSupabase, addTrip } from '../supabase';
+import { fetchPlaceDataFromSupabase, addPlace } from '../supabase';
 import './activities.css'
 import Navbar from './navbar.jsx';
 
@@ -47,7 +47,7 @@ const Activities = ({name}) => {
         </div>
         <div className="HomePlacePageContainer">
             <input type="text" placeholder="Add a destination" className='ActivitySearchInput' value-={destination} onChange={(e) => handleAddPlace(e)}/>
-            <button id="button-3" onClick={(e) => addTrip(e)}>
+            <button id="button-3" onClick={(e) => addPlace(e)}>
                 Add
                 </button>
         </div>
