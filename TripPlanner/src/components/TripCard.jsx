@@ -2,10 +2,10 @@
 import React from 'react';
 import "./TripCard.css"
 
-const TripCard = ({ country, start_date, end_date }) => {
+const TripCard = ({ country, start_date, end_date, onClick }) => {
 // const TripCard = ({ country, start_date, end_date, Imagesrc }) => {
   return (
-    <div className="tripCard">
+    <div className="tripCard" onClick={onClick}>
       {/* <div className="tripImageContainer"> */}
         {/* <img src={imageSrc} alt={`${country} Trip`} /> */}
       {/* </div> */}

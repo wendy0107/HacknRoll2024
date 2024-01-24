@@ -7,6 +7,17 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle shadow effect */
+    padding: 20px;
+    max-width: 90%;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add smooth transition for the effect */
+
+    &:hover {
+    background-color: #e0e0e0; /* Change the background color on hover */
+    }
 }
 
 .tripImageContainer {
