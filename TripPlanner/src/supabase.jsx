@@ -47,4 +47,8 @@ export async function fetchTripDataFromSupabase() {
 // get place id from text
 // get place details from place id
 // add the place details to the db where photo is the google url
-
+//TODO
+export async function addPlace(e) {
+  if (error) console.error(error)
+  else console.log(data)
+}
